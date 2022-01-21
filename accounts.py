@@ -30,6 +30,12 @@ class Account:
         return "Yes you can user that as a username"
 
 
+    def delete_account(self):
+        """
+        This method delete an account 
+        """
+        return Account.userAccounts.remove(self)
+
 
 
 """
@@ -43,10 +49,3 @@ Testing below as I go
 # newAccount2 = Account("yussufsaadi", "4321")
 # newAccount.save_account()
 # print("USers account now has ", len(Account.userAccounts))
-
-
-newAccount = Account("yahyasaadi", "1234")
-newAccount.save_account()
-newAccount2 = Account("yussuf", "1234")
-newAccount2.save_account()
-print(newAccount2.username_exists("yussuf"))

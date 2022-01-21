@@ -7,7 +7,7 @@ class Account:
         Class that generates new instances of accounts
         """
 
-        self.username = userName
+        self.userName = userName
         self.password = password
 
     userAccounts = []
@@ -16,6 +16,21 @@ class Account:
         This method saves every new user's account info 
         """
         return Account.userAccounts.append(self)
+
+
+    @classmethod
+    def username_exists(cls, username):
+        """
+        This alerts the user if a username has been taken and asks them
+        to create another one
+        """
+        for account in cls.userAccounts:
+            if account.userName == username:
+                return "Username already taken. Please try another one."
+        return "Yes you can user that as a username"
+
+
+
 
 """
 Testing below as I go
@@ -28,3 +43,10 @@ Testing below as I go
 # newAccount2 = Account("yussufsaadi", "4321")
 # newAccount.save_account()
 # print("USers account now has ", len(Account.userAccounts))
+
+
+newAccount = Account("yahyasaadi", "1234")
+newAccount.save_account()
+newAccount2 = Account("yussuf", "1234")
+newAccount2.save_account()
+print(newAccount2.username_exists("yussuf"))

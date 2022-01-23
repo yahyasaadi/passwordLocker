@@ -33,8 +33,21 @@ def main():
 
     print(f"{user}, please sign up and lets get started.")
 
+    while True:
+        print("Use these short codes : ca - create a new account, sp - save a password, dp - display passwords")
+        answer = input().lower()
 
+        if answer == 'ca':
+            print('*'*15)
 
+            print("Username: ")
+            username = input()
+
+            print("Password: ")
+            pword = input()
+
+            save_account(create_account(username, pword))
+            print(f"The account for {username} has been made.")
 
 if __name__ == '__main__':
     main()

@@ -37,6 +37,11 @@ class Account:
         return Account.userAccounts.remove(self)
 
 
+    @classmethod
+    def display_accounts(cls):
+        return cls.userAccounts
+
+
 
 """
 Testing below as I go

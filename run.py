@@ -25,3 +25,17 @@ def checkIfUsernameExists(username):
 # fucntion to display account
 def displayAccount():
     return Account.display_accounts()
+
+
+def main():
+    print("Welcome To PassWordLocker. What is your name?")
+    user = input()
+
+    print(f"{user}, please sign up and lets get started.")
+
+
+
+
+if __name__ == '__main__':
+    main()
+

@@ -95,6 +95,17 @@ def main():
 
             save_password(create_password(sitename, username, pword))
             print(f"Your password for {sitename} has been saved.")
+        
+        
+        elif answer == 'dp':
+            print('*'*15)
+            print('\n')
+            if display_password():
+                for password in display_password():
+                    print(f"{password.siteName} {password.user_name} {password.pass_word}")
+                    print('\n')
+            else:
+                print('You have saved passwords.')
 
 if __name__ == '__main__':
     main()

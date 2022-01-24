@@ -1,9 +1,12 @@
 from accounts import Account
 from passwords import Password
 
+"""
+Fucntions accessing the Account class
+"""
 # fucntion to create new method
-def create_account(usrname, password):
-    account = Account(usrname, password)
+def create_account(username, password):
+    account = Account(username, password)
     return account
 
 
@@ -27,6 +30,22 @@ def displayAccount():
     return Account.display_accounts()
 
 
+
+"""
+Fucntions accessing the Password class
+"""
+
+def create_password(sitename, username, password):
+    new_password = Password(sitename, username, password)
+    return new_password
+
+
+
+
+
+
+
+
 def main():
     print("Welcome To PassWordLocker. What is your name?")
     user = input()
@@ -48,6 +67,21 @@ def main():
 
             save_account(create_account(username, pword))
             print(f"The account for {username} has been made.")
+
+        elif answer == 'sp':
+            print('*'*15)
+
+            print("Sitename, eg Instagram: ")
+            sitename = input()
+
+            print("Your username for the site: ")
+            username = input()
+
+            print("Your password for the site: ")
+            pword = input()
+
+            
+            # print(f"The account for {username} has been made.")
 
 if __name__ == '__main__':
     main()

@@ -1,3 +1,5 @@
+#!/usr/bin/env python3
+
 from accounts import Account
 from passwords import Password
 
@@ -56,9 +58,6 @@ def display_password():
 
 
 
-
-
-
 def main():
     print("Welcome To PassWordLocker. What is your name?")
     user = input()
@@ -66,7 +65,7 @@ def main():
     print(f"{user}, please sign up and lets get started.")
 
     while True:
-        print("Use these short codes : ca - create a new account, sp - save a password, dp - display passwords")
+        print("Use these short codes : ca - create a new account, sp - save a password, dp - display passwords, ex - exit")
         answer = input().lower()
 
         if answer == 'ca':
@@ -106,6 +105,15 @@ def main():
                     print('\n')
             else:
                 print('You have saved passwords.')
+
+        elif answer == 'ex':
+            print('Exiting the application...')
+            break
+
+        else:
+            print("Please choose an option.")
+
+
 
 if __name__ == '__main__':
     main()

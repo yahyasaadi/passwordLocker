@@ -40,6 +40,19 @@ def create_password(sitename, username, password):
     return new_password
 
 
+# fucntion to save new passwords
+def save_password(password):
+    password.save_password()
+
+
+# function to delete a password
+def del_password(password):
+    password.delete_password()
+
+
+# fucntion to display passwords
+def display_password():
+    return Password.display_password()
 
 
 
@@ -80,8 +93,8 @@ def main():
             print("Your password for the site: ")
             pword = input()
 
-            
-            # print(f"The account for {username} has been made.")
+            save_password(create_password(sitename, username, pword))
+            print(f"Your password for {sitename} has been saved.")
 
 if __name__ == '__main__':
     main()

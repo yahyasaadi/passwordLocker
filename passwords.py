@@ -24,7 +24,7 @@ class Password:
         '''
         This method returns the password list
         '''
-        return cls.passwords[0]
+        return cls.passwords
 
 
     def delete_password(self):

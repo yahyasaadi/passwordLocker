@@ -57,6 +57,10 @@ def display_password():
     return Password.display_password()
 
 
+# fucntion to display passwords
+def generate_password():
+    return Password.generate_pw()
+
 
 def main():
     print("Welcome To PassWordLocker. What is your name?")
@@ -88,11 +92,18 @@ def main():
 
             print("Your username for the site: ")
             username = input()
+            # Trying password generate
+            print("Do you want a generate password? y = yes or n = no")
+            generate_pass = input()
+            if generate_pass == 'y':
+                generated = generate_password()
+                print("This is your generated password ", generated)
+                save_password(create_password(sitename, username, generated))
+            else:
+                print("Your password for the site: ")
+                pword = input()
 
-            print("Your password for the site: ")
-            pword = input()
-
-            save_password(create_password(sitename, username, pword))
+                save_password(create_password(sitename, username, pword))
             print(f"Your password for {sitename} has been saved.")
         
         

@@ -1,5 +1,7 @@
 # Passwords class
 import random
+
+from pyrfc3339 import generate
 class Password:
 
     def __init__(self, siteName, user_name, pass_word):
@@ -33,14 +35,15 @@ class Password:
         '''
         return Password.passwords.remove(self)
 
-
     
-    def generate_pw():
+    random_pass = "abcdefghijklmnopqrstuvwxyz0123456789"
+    @classmethod
+    def generate_pw(cls):
         '''
         Added a method to generate a random password for the user
         '''
-        random_pass = "abcdefghijklmnopqrstuvwxyz0123456789"
-        return ''.join((random.choice(random_pass) for i in range(8)))
+        generated_password = ''.join((random.choice(cls.random_pass) for i in range(8)))
+        return generated_password
 
 
 
